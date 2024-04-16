@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Responsiva y Deslizable con Materialize</title>
+  <!-- Materialize CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Material Icons 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <style>
+    .responsive-table {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .responsive-table th,
+    .responsive-table td {
+      min-width: 150px;
+    }
+
+    .bono-cell {
+      line-height: 1.2;
+    }
+
+    .bono-title {
+      font-weight: bold;
+      color: #039be5;
+      /* Color de texto para títulos de bono */
+    }
+
+    .last-row {
+      background-color: #f2f2f2;
+      /* Color de fondo para la última fila de cada columna */
+    }
+
+    .bono-cell {
+    width: 400px; /* Ancho fijo para la celda */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid black; /* Borde para el rectángulo */
+    display: flex; /* Utilizar flexbox */
+    flex-direction: column; /* Dirección de apilamiento de elementos */
+  }
+
+  .bono-title,
+  .bono-amount {
+    display: block; /* Hacer que los títulos y montos estén en bloques separados */
+  }
+
+    .bono-amount {
+      color: #009688;
+      font-size: 10px;
+    }
+    .bono-paragraph {
+    flex: 1; /* Hacer que los párrafos se expandan para ocupar el espacio disponible */
+    margin: 0; /* Eliminar margen */
+    background-color: #f2f2f2; /* Color de fondo */
+    border: 1px solid #ccc; /* Borde */
+    padding: 5px; /* Espaciado interno */
+    max-width: 500px; /* Ancho máximo para los párrafos */
+    overflow: hidden; /* Ocultar el contenido que excede el ancho máximo */
+    text-overflow: ellipsis; /* Mostrar puntos suspensivos para el contenido que excede */
+  }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h4>Ejemplo de tabla responsiva y deslizable con Materialize</h4>
+        <div class="responsive-table">
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Bono Cartera</th>
+                <th>Bono MicroEmpresa</th>
+                <th>Bono Plus</th>
+                <th>Bono Clientes</th>
+                <th>Bono Retención</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="bono-cell">
+                  <p class="bono-paragraph"><span class="bono-title">Tu Monto de Cartera Actual:</span>
+                  S/. 324,869.18</p>
+                  <p class="bono-paragraph"><span class="bono-title">Tu Monto de Cartera Inicial:</span>
+                  S/. 274,045.94</p>
+                  <p class="bono-paragraph"><span class="bono-title">Tu Crecimiento de Cartera:</span>
+                  = S/. 50,823.24</p>
+                  <p class="bono-paragraph"><span class="bono-title">Crecimiento Mínimo para Comisionar <br> Como Analista Nuevo y AVAN:</span>
+                  Meta Mínima S/. 34,000.00</p>
+                  <p class="bono-paragraph"><span class="bono-title">Porcentaje de Crecimiento:</span>
+                  (S/.50,823.24 / S/.34,000.00 ) x 100 <br> = 149.48 %</p>
+                  <p class="bono-paragraph"><span class="bono-title">Tu Crecimiento de Cartera ha excedido La Meta Mínima en:</span>
+                  Excedente S/. 16,823.24</p>
+                  <p class="bono-paragraph"><span class="bono-title">Bono Por Cumplimiento del Mínimo:</span>
+                  Recibes S/. 250 <br> por alcanzar la meta mínima de S/ 34,000.00.</p>
+                  <p class="bono-paragraph"><span class="bono-title">Bono Plus:</span>
+                  Bono Plus Generado del Porcentaje de <br> Crecimiento de Cartera que supera tu meta: <br> *....Porcentaje = 149.48 %</p>
+                  <p class="bono-paragraph"><span class="bono-title">Entonces Te Corresponde Recibir <br> (0.5%) del Excedente:</span>
+                  (0.5% ) x <br> S/. 16,823.24 = S/. 84.12</p>
+                  <p class="bono-paragraph"><span class="bono-title">Bono Total:</span>
+                  S/. 250 <br>+ S/. 84.12 <br> = S/. 334.12</p>
+                </td>
+                <td>Fila 1 - Celda 2</td>
+                <td>Fila 1 - Celda 3</td>
+                <td>Fila 1 - Celda 4</td>
+                <td class="last-row">Fila 1 - Celda 5</td>
+              </tr>
+              <tr>
+                <td class="bono-cell">
+                  <span class="bono-title">TU BONO PLUS ES:</span><br>
+                  {pago_excedente_saldo}
+                </td>
+                <td>Fila 2 - Celda 2</td>
+                <td>Fila 2 - Celda 3</td>
+                <td>Fila 2 - Celda 4</td>
+                <td class="last-row">Fila 2 - Celda 5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="flow-text">Desliza para la derecha para ver más contenido</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h4>Ejemplo de tabla responsiva y deslizable con Materialize</h4>
+        <div class="responsive-table">
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Bono Cartera</th>
+                <th>Bono MicroEmpresa</th>
+                <th>Bono Plus</th>
+                <th>Bono Clientes</th>
+                <th>Bono Retención</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="bono-cell">
+                  <span class="bono-title">TU BONO POR CUMPLIMIENTO ES:</span><br>
+                  {pago_cumplimiento_saldo}<br>
+                  <span class="bono-amount">TU BONO POR CUMPLIMIENTO ES:</span><br>
+                  {pago_cumplimiento_saldo}<br>
+                  <span class="bono-title">TU BONO POR CUMPLIMIENTO ES:</span><br>
+                  {pago_cumplimiento_saldo}<br>
+                  <span class="bono-amount">TU BONO POR CUMPLIMIENTO ES:</span><br>
+                  {pago_cumplimiento_saldo}<br>
+
+
+                </td>
+                <td>Fila 1 - Celda 2</td>
+                <td>Fila 1 - Celda 3</td>
+                <td>Fila 1 - Celda 4</td>
+                <td class="last-row">Fila 1 - Celda 5</td>
+              </tr>
+              <tr>
+                <td class="bono-cell">
+                  <span class="bono-title">TU BONO PLUS ES:</span><br>
+                  {pago_excedente_saldo}
+                </td>
+                <td>Fila 2 - Celda 2</td>
+                <td>Fila 2 - Celda 3</td>
+                <td>Fila 2 - Celda 4</td>
+                <td class="last-row">Fila 2 - Celda 5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="flow-text">Desliza para la derecha para ver más contenido</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
